@@ -236,16 +236,25 @@ Wacole family:
 6. The campaign ID persists. cmpid=333333 appeared in 5 different streams - the attacker's tracking identifier tied the whole attack together.
 
 ---
-
 ## Screenshots
 
-- [X] Attack overview (Packet list with http filter)
-- [X] Stream 0 - Initial fake news page
-- [X] Stream 2 - Exploit kit redirect (/web1.php)
-- [X] Stream 3 - Exploit HTML + Java fingerprinting code
-- [X] Stream 6 - Cleanup redirect (rightmedia.com)
-- [X] Export Objects list showing extracted files
-- [X] Windows Defender quarantine (Exploit:Java/Wacole.A)
+### Attack overview — HTTP filter
+![Attack overview](../screenshots/01-attack-overview.png)
+
+### Exploit kit landing page (`/web1.php`)
+![Web1 redirect](../screenshots/02-stream-2-web1.png)
+
+### Java fingerprinting code
+![Exploit code](../screenshots/03-exploit-code.png)
+
+### Cleanup redirect to rightmedia.com
+![Cleanup redirect](../screenshots/04-cleanup-redirect.png)
+
+### Extracted HTTP objects
+![Export objects](../screenshots/05-export-objects.png)
+
+### Windows Defender quarantine
+![Defender](../screenshots/06-defender-quarantine.png)
 
 ---
 
