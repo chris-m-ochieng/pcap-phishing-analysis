@@ -1,6 +1,6 @@
 # PCAP & Phishing Analysis
 
-Hands-on network forensics and phishing analysis portfolio — part of a 30-day SOC analyst sprint.
+Hands-on network forensics and phishing analysis portfolio
 
 ## Purpose
 
