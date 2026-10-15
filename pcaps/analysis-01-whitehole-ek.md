@@ -85,19 +85,11 @@ Code analysis:
 
 Result: If the victim has Java, an invisible iframe loads the Java exploit.
 
-### Hop 4 — Malware delivery (Stream 3, continued)
+### Hop 4 — Payload delivery — malware download
 
-Attacker -> Victim
+The Java exploit successfully executed and triggered the malware download. The main payload (`333333.exe`) was streamed via HTTP in ~90 TCP segments of 1322 bytes each (packets #415–#504, ~120 KB total). The attacker then requested a second-stage URL (`/temp/support/-148529710/?page=333333302`), which redirected to a second malware executable (`min.exe`). The victim's browser subsequently returned to the fake news site, indicating the attack was complete.
 
-GET /temp/support/7e.jar?java=333333 HTTP/1.1
-GET /temp/support/30f29ae/app.jnlp HTTP/1.1
-GET /temp/333333.exe HTTP/1.1
-GET /temp/min.exe HTTP/1.1
-
-- 7e.jar - Java exploit payload
-- app.jnlp - Java Web Start launcher
-- 333333.exe - first malware executable
-- min.exe - second malware executable
+The "Continuation" Wireshark markers indicate large files being delivered via chunked HTTP transfer — a signature of malware downloads in PCAP analysis.
 
 ### Hop 5 — Cleanup redirect (Stream 6)
 
