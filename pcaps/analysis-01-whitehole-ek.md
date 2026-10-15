@@ -27,6 +27,14 @@ A Windows 7 victim browsed a compromised news site, was silently redirected thro
 
 ## Attack chain
 
+### Initial access vector — SEO poisoning
+
+The victim arrived at the fake news site via a Google search result (visible in the Referer header):
+
+Referer: http://www.google.com/url?sa=t&...&url=http%3A%2F%2Fwww.kff1.com%2Fgnews.php%3Fid%3D884107-mlb-jeff-francoeur-had-lasik-surgery
+
+The page was ranked as the **top Google result** (cd=1) for a trending MLB news topic. The fake article contained proper Facebook OpenGraph metadata and SEO keywords, making it appear as legitimate news. This is a **black-hat SEO poisoning** technique: the attacker capitalizes on trending topics to trick search engines and victims.
+
 ### Hop 1 — Initial lure (Stream 0)
 
 Victim -> Compromised news site (23.218.156.83)
